@@ -1,16 +1,28 @@
-import { useState } from 'react'
 
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import './App.css'
+import { SideMenu } from './components/SideMenu/SideMenu';
+import { Home } from './pages/Home/Home';
+import { FirstExercise } from './pages/FirstExercise/FirstExercise';
+import { SecondExercise } from './pages/SecondExercise/SecondExercise';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<SideMenu />}>
+      <Route index element={<Home />} />
+      <Route path="firstexercise" element={<FirstExercise />} />
+      <Route path="secondexercise" element={<SecondExercise />} />
+    </Route>
+  )
+)
 
 function App() {
-  const [count, setCount] = useState(0)
+
   return (
-    <div className='bg-[#ffffff] w-100 h-100'>
-      <h1 className="text-3xl font-bold underline text-teal-500">
-        Hello world!
-      </h1>
-    </div>
-  )
+    <>
+      <RouterProvider router={router}/>
+    </>
+  );
 }
 
-export default App
+export default App;

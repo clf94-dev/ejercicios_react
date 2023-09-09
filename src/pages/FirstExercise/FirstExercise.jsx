@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useStore } from "../../store/dataSlice"
 import { Navbar } from "../../components/Navbar/Navbar";
 
 export function FirstExercise() {
     const [inputValue, setInputValue] = useState('');
+    const requestDataExercise1 = useStore((state) => state.requestDataExercise1);
 
     const handleInputChange = (event) => {
         const value = event.target.value;
@@ -13,7 +15,10 @@ export function FirstExercise() {
       };
     const handleSubmit = (event) => {
       event.preventDefault(); 
-      
+      const pathParams = {
+        name: inputValue
+      }
+      requestDataExercise1(pathParams);
 
     };
     

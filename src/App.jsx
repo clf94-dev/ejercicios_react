@@ -8,7 +8,7 @@ import { SecondExercise } from './pages/SecondExercise/SecondExercise';
 function App() {
 
   return (
-  <div className='flex flex-column w-full'>
+  <div className='flex w-full'>
     <BrowserRouter>     
       <Routes>
         <Route path='/' exact element={<Home />} />

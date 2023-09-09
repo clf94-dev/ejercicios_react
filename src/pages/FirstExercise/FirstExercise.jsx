@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useStore } from "../../store/dataSlice"
 import { Navbar } from "../../components/Navbar/Navbar";
 
 export function FirstExercise() {
-    const [inputValue, setInputValue] = useState('');
+    const nameValue = useStore((state) => state.nameValue);
+    const [inputValue, setInputValue] = useState(nameValue);
     const requestDataExercise1 = useStore((state) => state.requestDataExercise1);
+    let navigate = useNavigate(); 
 
     const handleInputChange = (event) => {
         const value = event.target.value;
@@ -19,6 +22,7 @@ export function FirstExercise() {
         name: inputValue
       }
       requestDataExercise1(pathParams);
+      navigate('/firstresults');
 
     };
     

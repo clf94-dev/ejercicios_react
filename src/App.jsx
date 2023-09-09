@@ -4,6 +4,7 @@ import './App.css'
 import { Home } from './pages/Home/Home';
 import { FirstExercise } from './pages/FirstExercise/FirstExercise';
 import { SecondExercise } from './pages/SecondExercise/SecondExercise';
+import { FirstExerciseResults } from './pages/FirstExerciseResults/FirstExerciseResults';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/firstexercise' exact element={<FirstExercise />} />
+        <Route path='/firstresults' exact element={<FirstExerciseResults />} />
         <Route path='/secondexercise' exact element={<SecondExercise />} />
       </Routes>
     </BrowserRouter>

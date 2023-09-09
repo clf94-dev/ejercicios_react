@@ -3,6 +3,7 @@ import { requestGenderizedData,requestAgifyData, requestNationalizedData  } from
 
 
 export const useStore = create((set) => ({
+    nameValue: '',
     genderizeData: undefined,
     setGenderizeData: (data) => set({ genderizeData: data }),
     nationalizeData: undefined,
@@ -29,6 +30,7 @@ export const useStore = create((set) => ({
             genderizeData,
             nationalizeData,
             agifyData,
+            nameValue: pathParams.name,
         });
       },
 }));

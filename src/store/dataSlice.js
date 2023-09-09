@@ -1,6 +1,6 @@
 import create from 'zustand';
 import { requestGenderizedData,requestAgifyData, requestNationalizedData  } from '../services/firstExercise';
-
+import { requestHistoryData } from '../services/secondExercise';
 
 export const useStore = create((set) => ({
     nameValue: '',
@@ -11,6 +11,7 @@ export const useStore = create((set) => ({
     agifyData: undefined,
     setAgifyData: (data) => set({ agifyData: data }),
 
+    historyData: undefined,
     requestDataExercise1: async (pathParams) => {
         const [
             genderizeData,
@@ -31,6 +32,22 @@ export const useStore = create((set) => ({
             nationalizeData,
             agifyData,
             nameValue: pathParams.name,
+        });
+      },
+      requestHistoryExercise2: async () => {
+        const [
+            historyData
+          
+        ] = await Promise.all([
+          requestHistoryData(),
+         
+          
+        ]);
+        
+    
+    
+        set({
+            historyData,
         });
       },
 }));

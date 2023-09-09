@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_FIRST_EXE_URL = import.meta.env.VITE_API_URL;
-const API_SECOND_EXE_URL = import.meta.env.VITE_HISTORIC_API_URLL;
+const API_SECOND_EXE_URL = import.meta.env.VITE_HISTORIC_API_URL;
 const makeCall = ({
   method = 'GET',
   path,
@@ -12,7 +12,7 @@ const makeCall = ({
   responseType = undefined,
   isFirstExe = true,
 }) => new Promise((resolve, reject) => {
-  const url = `${isFirstExe ? API_FIRST_EXE_URL : API_SECOND_EXE_URL }${path}/${pathParams.name || ''}`;
+  const url = `${isFirstExe ? API_FIRST_EXE_URL : API_SECOND_EXE_URL }${path}${pathParams && pathParams.name ? `/${pathParams.name}` : ''}`;
 
   const headers = {};
 

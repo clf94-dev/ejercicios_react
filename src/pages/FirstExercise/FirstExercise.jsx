@@ -7,6 +7,7 @@ export function FirstExercise() {
     const nameValue = useStore((state) => state.nameValue);
     const [inputValue, setInputValue] = useState(nameValue || "");
     const requestDataExercise1 = useStore((state) => state.requestDataExercise1);
+    const restartDataExercise1 = useStore((state) => state.restartDataExercise1);
     let navigate = useNavigate(); 
 
     const handleInputChange = (event) => {
@@ -21,6 +22,7 @@ export function FirstExercise() {
       const pathParams = {
         name: inputValue
       }
+      restartDataExercise1();
       requestDataExercise1(pathParams);
       navigate('/firstresults');
 
@@ -28,10 +30,10 @@ export function FirstExercise() {
     
     
     return (
-        <div className="w-full">
+        <div className="w-full dark:bg-gray-800 bg-gray-200">
             <Navbar />
             <div className="h-screen flex flex-col justify-evenly items-center m-auto">
-                <h2 className="font-bold text-xl">Enter your name</h2>
+                <h2 className="font-bold text-xl dark:text-white">Enter your name</h2>
                 <form className="flex flex-col h-[500px] justify-between" onSubmit={handleSubmit}>
                   <input
                     type="text"

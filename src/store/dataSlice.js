@@ -46,6 +46,14 @@ export const useStore = create((set) => ({
             nameValue: pathParams.name,
         });
       },
+      restartDataExercise1: () => {
+        set({
+            genderizeData: undefined,
+            nationalizeData: undefined,
+            agifyData: undefined,
+            nameValue: '',
+        });
+      },
       requestHistoryExercise2: async () => {
         const [
             historyData

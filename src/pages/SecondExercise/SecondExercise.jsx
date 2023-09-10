@@ -22,9 +22,9 @@ export function SecondExercise() {
             <div className=" h-full flex flex-col justify-evenly items-center m-auto">
                 <h1 className="py-6">COVID History data in the US</h1>
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
-                    <Card title="Cases" data={historyCases} color="#8884d8" />
-                    <Card title="Testing" data={historyTesting} colo="#82ca9d" />
-                    <Card title="Deaths" data={historyDeath} color="#ffc658" />
+                  <Card secondExercise title="Testing" data={historyTesting} color="#82ca9d" />
+                  <Card secondExercise title="Cases" data={historyCases} color="#8884d8" />
+                  <Card secondExercise title="Deaths" data={historyDeath} color="#ffc658" />
                 </div>
             </div>
         </div>

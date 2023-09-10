@@ -15,7 +15,7 @@ import {
   import { DataFormater } from '../../utils/formatter';
 import ChartTitle from '../ChartTitle/ChartTitle';
 
- function Stadistics({data, color}) {
+ function Stadistics({data, color, brush}) {
     return (
         <div className="w-full flex flex-col p-4 ">
             <ChartTitle title="Total"/>
@@ -80,7 +80,7 @@ import ChartTitle from '../ChartTitle/ChartTitle';
                 <YAxis tick={{fontSize: 10}} tickFormatter={DataFormater} />
                 {/* <Tooltip /> */}
                 <Line type="monotone" dataKey="seven_day_change_percent" stroke={color} fill={color} />
-                <Brush dataKey="date" travellerWidth={1}/>
+                {brush ? <Brush dataKey="date" travellerWidth={1}/> : null}
               </LineChart>
             </ResponsiveContainer>
         </div>
@@ -89,6 +89,7 @@ import ChartTitle from '../ChartTitle/ChartTitle';
 Stadistics.propTypes = {
     data: PropTypes.array,
     color: PropTypes.string,
+    brush: PropTypes.bool,
 }
 
 export default Stadistics;

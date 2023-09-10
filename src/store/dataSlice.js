@@ -28,11 +28,20 @@ export const useStore = create((set) => ({
           
         ]);
         
+        let nationalizedDataPercentage = []
+        nationalizeData.country.forEach((country) => {
+            const item = {
+                country_id: country.country_id,
+                probability: country.probability * 100,
+            }
+            nationalizedDataPercentage.push(item)
+        })
+
     
     
         set({
             genderizeData,
-            nationalizeData,
+            nationalizeData : {...nationalizeData, country: nationalizedDataPercentage},
             agifyData,
             nameValue: pathParams.name,
         });

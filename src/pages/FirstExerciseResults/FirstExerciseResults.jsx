@@ -9,7 +9,6 @@ export function FirstExerciseResults() {
     const agifyData = useStore((state) => state.agifyData);
     const genderizeData = useStore((state) => state.genderizeData);
     const nationalizeData = useStore((state) => state.nationalizeData);
-    console.log({agifyData, genderizeData, nationalizeData, nameValue})
     return (
         <div className="w-full h-screen flex-col bg-gray-200">
             <Navbar />
@@ -28,7 +27,7 @@ export function FirstExerciseResults() {
                     
                 </div>
                 <div className="w-full grid grid-cols-1  gap-5 p-4">
-                    {nationalizeData ? <Card title="Nationality" data={nationalizeData} type="nationality"/> : null}
+                    {nationalizeData ? <Card title="Nationality" data={nationalizeData} type="nationality" chart/> : null}
             
                 </div>
               

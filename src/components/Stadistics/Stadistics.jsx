@@ -13,11 +13,13 @@ import {
     ResponsiveContainer,
   } from 'recharts';
   import { DataFormater } from '../../utils/formatter';
+import ChartTitle from '../ChartTitle/ChartTitle';
 
  function Stadistics({data, color}) {
     return (
-        <div className="flex flex-col p-4 ">
-            <p>Total</p>
+        <div className="w-full flex flex-col p-4 ">
+            <ChartTitle title="Total"/>
+            
             <ResponsiveContainer width="100%" height={200}>
               <AreaChart
                 width={500}
@@ -38,7 +40,7 @@ import {
                 <Area type="monotone" dataKey="total" stroke={color} fill={color} />
               </AreaChart>
             </ResponsiveContainer>
-            <p>Change from previous day</p>
+            <ChartTitle title="Change from previous day"/>
             <ResponsiveContainer width="100%" height={200}>
               <AreaChart
                 width={500}
@@ -59,7 +61,7 @@ import {
                 <Area type="monotone" dataKey="change_from_prior_day" stroke={color} fill={color} opacity={0.5} />
               </AreaChart>
             </ResponsiveContainer>
-            <p>7 day percentage change (%)</p>
+            <ChartTitle title="7 day percentage change (%)"/>
             <ResponsiveContainer width="100%" height={200}>
               <LineChart
                 width={500}

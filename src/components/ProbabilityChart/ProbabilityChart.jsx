@@ -28,9 +28,8 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
     }
 } */
 export function ProbabilityChart({data}) {
-   console.log({data})
     return (
-        <div className="w-full flex flex-col p-4 ">
+        <div className="w-full flex flex-col justify-center p-4 ">
             {/* <div className='flex flex-row  w-full h-100'>
                 {data.map(item => {
                     const countryLowercase = item.country_id.toLowerCase()

@@ -4,11 +4,11 @@ import ProbabilityChart from '../ProbabilityChart/ProbabilityChart';
 function Card({title, data, color, secondExercise, type, chart}) {
     return (
         <div className="card ">
-            <div className={`flex flex-col h-full w-full justify-center m-auto p-4 bg-white rounded ${!secondExercise ? "dark:bg-gray-800 dark:border dark:border-gray-100" : ""}`}>
+            <div className={`flex flex-col h-full w-full justify-center items-center m-auto p-4 bg-white rounded ${!secondExercise ? "dark:bg-gray-800 dark:border dark:border-gray-100" : ""}`}>
                 {secondExercise ? <>
                     <h3 className='font-bold text-xl '>{title}</h3>
                     <Stadistics brush={title === "Testing"} data={data} color={color} />
-                </> : <div className='flex flex-col'>
+                </> : <div className='flex flex-col w-full'>
                     {/* <h3 className='font-bold text-xl '>{title}</h3> */}
                     <div className='flex flex-row  justify-center text-center mb-[3px] '>
                         <p className='text-lg dark:text-white pt-[4px] '>Most Likely {title} {title === "Nationality" ? "(%)" : ""} :</p>

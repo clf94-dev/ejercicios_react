@@ -5,14 +5,14 @@ import { Navbar } from "../../components/Navbar/Navbar";
 
 export function FirstExercise() {
     const nameValue = useStore((state) => state.nameValue);
-    const [inputValue, setInputValue] = useState(nameValue);
+    const [inputValue, setInputValue] = useState(nameValue || "");
     const requestDataExercise1 = useStore((state) => state.requestDataExercise1);
     let navigate = useNavigate(); 
 
     const handleInputChange = (event) => {
         const value = event.target.value;
     
-        if (/^[A-Za-z]+$/.test(value)) {
+        if (/^[A-Za-z]+$/.test(value) || value === "") {
           setInputValue(value);
         } 
       };

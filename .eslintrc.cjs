@@ -19,6 +19,7 @@ module.exports = {
   plugins: ['react-refresh', "react", "react-hooks"],
   rules: {
     'react/react-in-jsx-scope': "off",
+    'react/prop-types': ['off'], 
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

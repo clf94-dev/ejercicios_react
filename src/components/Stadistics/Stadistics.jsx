@@ -80,7 +80,7 @@ import ChartTitle from '../ChartTitle/ChartTitle';
                 <YAxis tick={{fontSize: 10}} tickFormatter={DataFormater} />
                 {/* <Tooltip /> */}
                 <Line type="monotone" dataKey="seven_day_change_percent" stroke={color} fill={color} />
-                {brush ? <Brush dataKey="date" travellerWidth={1}/> : null}
+                {brush ? <Brush dataKey="date" width={200} x={100}/> : null}
               </LineChart>
             </ResponsiveContainer>
         </div>

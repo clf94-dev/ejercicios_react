@@ -17,11 +17,12 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
     render() {
       const { x, y,/*  stroke,  payload } = this.props;
   console.log({payload})
+  const countryLowercase = payload.value.toLowerCase()
       return (
   
       <g transform={`translate(${x},${y})`}>
         <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">
-        <span className={`fi fi-${payload.value}`}></span>
+        <span className={`fi fi-${countryLowercase}`}></span>
         </text>
       </g>
     );
@@ -30,16 +31,18 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
 export function ProbabilityChart({data}) {
     return (
         <div className="w-full flex flex-col justify-center p-4 ">
-            {/* <div className='flex flex-row  w-full h-100'>
+            <div className='flex flex-row w-full h-full justify-evenly mx-14'>
                 {data.map(item => {
                     const countryLowercase = item.country_id.toLowerCase()
-                    return(<span key={countryLowercase} className={`fi fi-${countryLowercase} text-lg`}></span>)
+                    return(<div key={countryLowercase} className='w-1/12 text-lg pr-20 '>
+                            <span  className={`fi fi-${countryLowercase}`} style={{height: 40, width: 40}}></span>
+                        </div>)
                 })}
 
-            </div> */}
+            </div>
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart width={500} height={200} data={data}>
-                    <XAxis dataKey="country_id"/*  tick={<CustomizedAxisTick />}  *//>
+                    <XAxis dataKey="country_id" /* tick={<CustomizedAxisTick />} */ />
                     <YAxis tick={{fontSize: 10}}  />
                     <Tooltip />
                     <Bar dataKey="probability" fill="#8884d8" /* label={<CustomizedLabel />} */ />

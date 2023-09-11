@@ -10,6 +10,8 @@ export const useStore = create((set) => ({
     setNationalizeData: (data) => set({ nationalizeData: data }),
     agifyData: undefined,
     setAgifyData: (data) => set({ agifyData: data }),
+    loadingResultsExercise1: true,
+    setLoadingResultsExercise1: (data) => set({ loadingResultsExercise1: data }),
 
     historyData: undefined,
     historyTestData: undefined,
@@ -44,6 +46,7 @@ export const useStore = create((set) => ({
             nationalizeData : {...nationalizeData, country: nationalizedDataPercentage},
             agifyData,
             nameValue: pathParams.name,
+            loadingResultsExercise1: false,
         });
       },
       restartDataExercise1: () => {

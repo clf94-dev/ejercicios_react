@@ -8,6 +8,7 @@ export function FirstExercise() {
     const [inputValue, setInputValue] = useState(nameValue || "");
     const requestDataExercise1 = useStore((state) => state.requestDataExercise1);
     const restartDataExercise1 = useStore((state) => state.restartDataExercise1);
+    const setLoadingResultsExercise1 = useStore((state) => state.setLoadingResultsExercise1);
     let navigate = useNavigate(); 
 
     const handleInputChange = (event) => {
@@ -19,9 +20,11 @@ export function FirstExercise() {
       };
     const handleSubmit = (event) => {
       event.preventDefault(); 
+      setLoadingResultsExercise1(true)
       const pathParams = {
         name: inputValue
       }
+      
       restartDataExercise1();
       requestDataExercise1(pathParams);
       navigate('/firstresults');
